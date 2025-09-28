@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Photo Revive AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@^0.14.0"
+        }
+      }
+    </script>
+    <script type="module" src="index.tsx"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Photo Revive AI</h1>
+        <p class="subtitle">Powered by Nano Banana Gemini</p>
+        <p>Bring old photos back to life. Upload an image to begin.</p>
+      </header>
+
+      <div class="controls">
+        <label for="file-upload" class="file-upload-label">
+          Upload Photo
+        </label>
+        <input id="file-upload" type="file" accept="image/*" />
+        <button id="enhance-button" disabled>Enhance Image</button>
+        <button id="download-button" disabled>Download</button>
+      </div>
+
+      <div class="image-container">
+        <div id="original-image-wrapper" class="image-wrapper">
+          <h2>Original</h2>
+          <div class="placeholder" id="original-placeholder">
+            <p>Your photo will appear here.</p>
+          </div>
+          <img id="original-image" alt="User uploaded image" hidden />
+        </div>
+        <div id="enhanced-image-wrapper" class="image-wrapper">
+          <h2>Enhanced</h2>
+          <div class="placeholder" id="enhanced-placeholder">
+             <p>The enhanced photo will appear here.</p>
+          </div>
+          <div class="loader" id="loader" hidden></div>
+          <img id="enhanced-image" alt="AI enhanced image" hidden />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
